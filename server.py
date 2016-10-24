@@ -73,6 +73,14 @@ class SIPRegisterHandler(socketserver.DatagramRequestHandler):
         fichj.close()
 
 
+    def json2registered(self)
+        try:
+            fich = open('registered.json', 'r')
+            self.c_dicc = fich.load(fich)
+            fich.close()
+        except:
+            self.c_dicc = {}
+
 
 
 if __name__ == "__main__":
