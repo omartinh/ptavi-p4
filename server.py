@@ -36,7 +36,7 @@ class SIPRegisterHandler(socketserver.DatagramRequestHandler):
         if data_list[0].upper() == 'REGISTER':
 
             usuario = data_list[1]
-            
+
             self.wfile.write(b"SIP/2.0 200 OK\r\n\r\n")
             expires = time.gmtime(time.time() + int(data_list[2]))
             c_attr['address'] = ip
