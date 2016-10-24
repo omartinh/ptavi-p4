@@ -20,6 +20,7 @@ class SIPRegisterHandler(socketserver.DatagramRequestHandler):
        
         c_attr = {}
        
+        self.json2registered()
         self.wfile.write(b"Hemos recibido tu peticion ")
         c_a_list=list(self.client_address)
         ip = c_a_list[0]
@@ -73,7 +74,7 @@ class SIPRegisterHandler(socketserver.DatagramRequestHandler):
         fichj.close()
 
 
-    def json2registered(self)
+    def json2registered(self):
         try:
             fich = open('registered.json', 'r')
             self.c_dicc = fich.load(fich)
